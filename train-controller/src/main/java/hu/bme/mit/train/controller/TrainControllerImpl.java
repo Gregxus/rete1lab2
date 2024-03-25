@@ -9,7 +9,7 @@ public class TrainControllerImpl implements TrainController {
     private int step = 0;
     private int referenceSpeed = 0;
     private int speedLimit = 0;
-    static int counter = 0;
+    static int definitellyNotAcounter = 0;
     static Timer timer;
 
     // Flag to indicate whether speed limit has been reached
@@ -23,7 +23,7 @@ public class TrainControllerImpl implements TrainController {
             @Override
             public void run() {
                 // System.out.println("TimerTask executing counter is: " + counter);
-                counter++;
+                definitellyNotAcounter++;
             }
         };
         Thread t = new Thread(new Runnable() {
@@ -33,7 +33,7 @@ public class TrainControllerImpl implements TrainController {
                 while (true) {
                     try {
                         followSpeed();
-                        if (counter == 3) {
+                        if (definitellyNotAcounter == 3) {
                             timer.cancel();//end the timer
                             break;//end this loop
                         }
