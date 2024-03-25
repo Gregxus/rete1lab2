@@ -26,9 +26,8 @@ public class TrainSensorTest {
         mockedTrainController = mock(TrainController.class);
         mockedTrainUser =  mock(TrainUser.class);
         trainSensor = new TrainSensorImpl(mockedTrainController,mockedTrainUser);
-
-        Mockito.when(mockedTrainUser.getAlarmState()).thenReturn(this.alarm);
-        doAnswer(answer -> when(mockedTrainUser.getAlarmState()).thenReturn((Boolean) answer.getArguments()[0])).when(mockedTrainUser).setAlarmState(any());
+        doAnswer(answer -> when(mockedTrainUser.getAlarmState()).thenReturn((Boolean) answer.getArguments()[0])).when(mockedTrainUser).setAlarmState(anyBoolean());
+        doAnswer(answer -> when(mockedTrainController.getReferenceSpeed()).thenReturn((Integer) answer.getArguments()[0])).when(mockedTrainController).setSpeedLimit(anyInt());
     }
 
     @Test
