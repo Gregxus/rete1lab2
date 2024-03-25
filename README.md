@@ -8,8 +8,6 @@ This is a sample application for the verification laboratory.
 * Name: **_Vörös Gergely_**
 * Neptun: **_Y78UTN_**
 
-## Hi!! 
-
 ## Getting started
 
 * The application is implemented in Java.
