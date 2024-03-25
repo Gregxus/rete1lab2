@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: hu.bme.mit.train.sensor.TrainSensorTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.532 s <<< FAILURE! - in hu.bme.mit.train.sensor.TrainSensorTest
-hu.bme.mit.train.sensor.TrainSensorTest.testTachographRecording  Time elapsed: 0.044 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.471 s <<< FAILURE! - in hu.bme.mit.train.sensor.TrainSensorTest
+hu.bme.mit.train.sensor.TrainSensorTest.testTachographRecording  Time elapsed: 0.063 s  <<< FAILURE!
 java.lang.AssertionError: expected:<3> but was:<2>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
