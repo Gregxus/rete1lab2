@@ -1,15 +1,53 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TrainControllerImpl implements TrainController {
 
     private int step = 0;
     private int referenceSpeed = 0;
     private int speedLimit = 0;
+    static int definitellyNotAcounter = 0;
+    static Timer timer;
 
     // Flag to indicate whether speed limit has been reached
     private boolean speedLimitReached = false;
+
+    
+    public TrainControllerImpl()
+    {
+        TimerTask timerTask = new TimerTask() {
+
+            @Override
+            public void run() {
+                // System.out.println("TimerTask executing counter is: " + counter);
+                definitellyNotAcounter++;
+            }
+        };
+        Thread t = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        followSpeed();
+                        if (definitellyNotAcounter == 3) {
+                            timer.cancel();//end the timer
+                            break;//end this loop
+                        }
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+        timer = new Timer("MyTimer");
+        timer.scheduleAtFixedRate(timerTask, 30, 3000);
+        t.start();
+    }
 
     @Override
     public void followSpeed() {
