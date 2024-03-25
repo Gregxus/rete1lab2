@@ -7,16 +7,16 @@ public class TrainControllerImpl implements TrainController {
     private int step = 0;
     private int referenceSpeed = 0;
     private int speedLimit = 0;
-    private Thread thread;
+    private Thread myThread;
 
     // Flag to indicate whether speed limit has been reached
     private boolean speedLimitReached = false;
 
     public TrainControllerImpl() {
-        thread = new Thread() {
+        myThread = new Thread() {
             @Override
             public void run(){
-                thread.run();
+                myThread.run();
                 try {
                     followSpeed();
                     Thread.sleep(2000);
