@@ -8,7 +8,9 @@ This is a sample application for the verification laboratory.
 * Name: **_Vörös Gergely_**
 * Neptun: **_Y78UTN_**
 
-## Hi!! 
+* Labor: **_MIT-3_**
+* Name: **_Tömösi Botond_**
+* Neptun: **_Q6Q7X2_**
 
 ## Getting started
 
